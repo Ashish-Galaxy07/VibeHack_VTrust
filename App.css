@@ -1,0 +1,158 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  --bg-main: #f5f7fb;
+  --bg-card: #ffffff;
+  --bg-soft: #edf2f7;
+  --bg-hover: #f1f5f9;
+
+  --text-primary: #1a202c;
+  --text-secondary: #64748b;
+
+  --border-color: #e2e8f0;
+  --accent: #3182ce;
+
+  --bubble-received: #ffffff;
+  --bubble-sent: #3182ce;
+
+  --danger-bg: #fff5f5;
+}
+
+body.dark-mode {
+  --bg-main: #020617;
+  --bg-card: #040d1a;
+  --bg-soft: #0d1b2a;
+  --bg-hover: #1e293b;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+
+  --border-color: #1e293b;
+  --accent: #60a5fa;
+
+  --bubble-received: #020617;
+  --bubble-sent: #101d49;
+
+  --danger-bg: #441a1a;
+}
+
+/* ================= BASE ================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= MODAL ================= */
+
+.delete-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.delete-modal h3 { color: var(--text-primary); }
+.delete-modal p { color: var(--text-secondary); }
+
+.btn-cancel { background: var(--bg-soft); color: var(--text-primary); }
+.btn-cancel:hover { background: var(--bg-hover); }
+
+
+.btn-delete { background: var(--accent); }
+.btn-delete:hover { filter: brightness(0.9); }
+
+.delete-modal p {
+  color: #718096;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+body.dark-mode .delete-modal p {
+  color: var(--text-secondary);
+}
+
+.delete-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-modal {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-cancel {
+  background-color: #EDF2F7;
+  color: #4A5568;
+}
+
+.btn-cancel:hover {
+  background-color: #E2E8F0;
+}
+
+body.dark-mode .btn-cancel {
+  background-color: #0a1929;
+  color: var(--text-primary);
+}
+
+body.dark-mode .btn-cancel:hover {
+  background-color: #1e3a5f;
+}
+
+.btn-delete {
+  background-color: #3182CE;
+  /* Requested Blue */
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #2B6CB0;
+}
+
+body.dark-mode .btn-delete:hover {
+  background-color: #2563EB;
+}
+
+body.dark-mode .delete-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: none;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-placeholder {
+    display: none;
+  }
+
+  .app-container.has-active-chat .message-list-container {
+    display: none;
+  }
+}
+
+@keyframes scaleInModal {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+

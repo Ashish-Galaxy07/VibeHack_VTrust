@@ -1,0 +1,48 @@
+.chat-placeholder {
+    flex: 1;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-large {
+    width: 120px;
+    height: 120px;
+    background-color: var(--primary-blue);
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(49, 130, 206, 0.3);
+}
+
+.logo-large svg {
+    width: 64px;
+    height: 64px;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+    .logo-large {
+        display: none;
+    }
+
+    .app-title {
+        font-size: 18px;
+    }
+}

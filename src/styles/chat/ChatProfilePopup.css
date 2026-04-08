@@ -1,0 +1,307 @@
+.chat-profile-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F8FAFC;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Hide scrollbar for aesthetics */
+.chat-profile-popup-overlay::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Header background with curve */
+.popup-header-bg {
+    position: relative;
+    width: 100%;
+    height: 14rem;
+    background-color: #17183B; /* Dark navy as shown in image */
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+/* Curve the bottom of the header */
+.popup-header-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -10%;
+    width: 120%;
+    height: 120px;
+    background-color: #17183B;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* Back Button */
+.popup-back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 20; 
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile Content container */
+.popup-content {
+    position: relative;
+    padding: 0 1.5rem 2rem 1.5rem;
+    margin-top: -80px; /* Pull content up over the curve */
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Image */
+.popup-image-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #E2E8F0;
+    border: 4px solid white;
+    box-shadow: 0 8px 24px rgba(23, 24, 59, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    z-index: 40;
+}
+
+.popup-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Reusable card style */
+.popup-card {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Identity Card specific styles */
+.identity-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.identity-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 4px 0;
+}
+
+.identity-bio {
+    font-size: 15px;
+    color: #64748B;
+    margin: 0 0 16px 0;
+}
+
+.batch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #F8FAFC;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 24px;
+}
+
+/* Action Buttons */
+.action-buttons-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.popup-primary-btn, .popup-secondary-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.popup-primary-btn {
+    background-color: #5C67F2; 
+    color: white;
+}
+.popup-primary-btn:hover {
+    background-color: #4F5AE6; 
+}
+
+.popup-secondary-btn {
+    background-color: #F8FAFC;
+    color: #475569;
+}
+.popup-secondary-btn:hover {
+    background-color: #F1F5F9;
+}
+
+.popup-outline-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    background: transparent;
+    border: 1.5px solid #CBD5E1;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.popup-outline-btn:hover {
+    background-color: #F8FAFC;
+}
+
+/* Stats Card */
+.stats-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 12px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; 
+}
+
+.stat-item:not(:last-child) {
+    border-right: 1px solid #F1F5F9;
+}
+
+.stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.stat-icon.purple { background-color: #F3E8FF; color: #A855F7; }
+.stat-icon.blue { background-color: #E0F2FE; color: #3B82F6; }
+.stat-icon.green { background-color: #DCFCE7; color: #22C55E; }
+
+.stat-item h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 4px 0;
+}
+
+.stat-item p {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+/* About Card & Shared Content Titles */
+.section-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #1E293B;
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+}
+
+.about-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Shared Content Card */
+.shared-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #F8FAFC;
+    cursor: pointer;
+}
+
+.shared-item:first-of-type {
+    padding-top: 8px;
+}
+
+.shared-item:last-child {
+    border-bottom: none;
+    padding-bottom: 4px;
+}
+
+.shared-icon-bg {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.shared-icon-bg.blue-light { background-color: #EEF2FF; } /* Indigo tinted */
+.shared-icon-bg.yellow-light { background-color: #FEF3C7; } /* Amber tinted */
+
+.shared-info {
+    flex: 1;
+}
+
+.shared-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0 0 4px 0;
+}
+
+.shared-info p {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+}

@@ -1,0 +1,47 @@
+.chat-placeholder {
+    flex: 1;
+    height: 100%;
+    background: linear-gradient(135deg, #e2e8f0 0%, #dbeafe 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    z-index: 1;
+}
+
+.logo-large {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-blue), #60a5fa);
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25);
+    transition: transform 0.3s ease;
+}
+
+
+.logo-large svg {
+    width: 64px;
+    height: 64px;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+body.dark-mode .chat-placeholder {
+    background: linear-gradient(135deg, #0b0f1a 0%, #151e2d 100%);
+}
